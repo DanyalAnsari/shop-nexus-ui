@@ -1,34 +1,38 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-sans" });
+
+const inter = Inter({
+	subsets: ["latin"],
+	variable: "--font-serif",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const jetBrainsMono = JetBrains_Mono({
+	variable: "--font-mono",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Shop-Nexus",
-  description: "A One-stop Shop for all your needs.",
+	title: "Shop-Nexus",
+	description: "A One-stop Shop for all your needs.",
 };
 
-export default function RootLayout({
-  children,
+export default function AppLayout({
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body
+				className={`${outfit.variable} ${inter.variable} ${jetBrainsMono.variable}  antialiased`}
+			>
+				{children}
+				<Toaster />
+			</body>
+		</html>
+	);
 }
