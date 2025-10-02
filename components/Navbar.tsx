@@ -9,7 +9,7 @@ const Navbar = () => {
 	return (
 		<nav className="relative">
 			<div className="mx-6">
-				<div className="flex-container container justify-between py-4  transition-all">
+				<div className="flex-container container justify-between py-4 transition-all">
 					{/* Logo */}
 					<Link
 						href="/"

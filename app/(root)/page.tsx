@@ -1,9 +1,15 @@
-import { Button } from "@/components/ui/button";
+import Hero from "@/components/home/Hero";
+import Newsletter from "@/components/home/NewsLetter";
+import OurSpecs from "@/components/home/OurSpecs";
+import ProductCatalog from "@/components/home/ProductCatalog";
 
 export default function Home() {
 	return (
-		<div className="w-full h-screen flex justify-center items-center">
-			<Button>Home</Button>
+		<div>
+			<Hero />
+			<ProductCatalog />
+			<OurSpecs />
+			<Newsletter />
 		</div>
 	);
 }
